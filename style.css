@@ -18,8 +18,9 @@ input{
 }
 label{
     display:block;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
     color: khaki;
+    
 }
 #fundo{
     justify-content: center;
@@ -42,4 +43,14 @@ label{
     color:khaki;
     justify-content: center;
     display: flex;
+}
+button{
+    color: khaki;
+    background-color: midnightblue;
+border-radius: 10px;
+}
+.oval{
+    display: block;
+    margin-top: 20px;
+    overflow-wrap: break-word;
 }
