@@ -1,12 +1,19 @@
+
 <?php
 include("conexao.php");
 
-$sql = "SELECT * FROM usuarios";
+$busca = isset($_GET["busca"]) ? trim($_GET["busca"]): "";
 
-$resultado = $conexao->query($sql);
+if($busca !== ""){
+    $stmt = $conexao->prepare(
+        "SELECT* FROM usuarios
+        WHERE nome LIKE ? OR sobrenome LIKE ? OR email LIKE ? OR tel LIKE ? 
+        ORDEN BY id DESC"
+    );
+    $termo ="%" . $busca . "%";
+    $stmt->bind_param("ssss", $termo, $termo, $termo, $termo);
+    $stmt->execute();
+    $resultado = $stmt->get_result();
+} else{
 
-?>
-<!DOCTYPE html>
-<html lang="pt-br">
-
-<html>
+}
