@@ -32,6 +32,15 @@ document.getElementById("formulario").addEventListener("submit", function(event)
         alert("Digite um telefone válido!");
         return;
     }
+let usuario ={
+    nome: nome,
+    sobrenome: sobrenome,
+    date: date,
+    email: email,
+    tel: tel,
+};
+console,log("Dados do formulário");
+console.log(usuario);
 
     alert("Formulário enviado com secesso!");
     this.submit();
