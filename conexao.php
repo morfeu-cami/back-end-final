@@ -2,8 +2,7 @@
 
 $servidor= "localhost";
 $usuario= "root";
-$senha="";
-$banco= "escola";
+$senha="admin";
 
 $conexao= new mysqli($servidor, $usuario, $senha, $banco);
 
@@ -13,6 +12,7 @@ if($conexao ->connect_error){
 }
 
 $conexao->query("CREATE DATABASE IF NOT EXISTS cadastro_alunos" );
+
 $conexao->select_db("cadastro_alunos");
 
 $sql ="CREATE TABLE IF NOT EXISTS usuarios(
@@ -23,4 +23,8 @@ $sql ="CREATE TABLE IF NOT EXISTS usuarios(
     email VARCHAR(100) NOT NULL,
     tel VARCHAR(50) NOT NULL
 )" 
+
+if($conexao->)query($sql)==={
+    die("Erro ao criar a tabela: " . $conexao->error);
+}
 ?>
